@@ -1,0 +1,75 @@
+:root {
+  --imgCardWidth: 300px;
+  --imgCardheight: 300px;
+}
+
+* {
+}
+
+body {
+  margin: 0px;
+  font-family: "Work sans", sans serif;
+  h1,
+  h2 {
+    font-family: "Amatic sc";
+    text-align: center;
+  }
+  header {
+    padding: 24.7vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("./images/lyon.webp") center/cover no-repeat;
+    text-align: center;
+    color: #ffffff;
+    a {
+      color: #ffffff;
+    }
+  }
+  main {
+    margin: 45px;
+    #introduction {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 406px;
+        height: auto;
+      }
+
+      h2 {
+        text-align: left;
+      }
+    }
+    #famousDishes {
+      display: flex;
+      justify-content: space-between;
+      .famousDishesCard {
+        width: 406px;
+        height: 491px;
+        border: 1px solid #cecece;
+        text-align: center;
+        background-color: #f9f9f8;
+        img {
+          width: var(--imgCardWidth);
+          height: var(--imgCardheight);
+          object-fit: cover;
+        }
+      }
+    }
+    #restaurants {
+      width: 80vw;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      overflow: hidden; /* Pour éviter les débordements */
+      .restaurantCard {
+        text-align: center;
+        max-width: calc((var(--imgCardWidth) * 1.35) + 30px);
+        img {
+          width: calc(var(--imgCardWidth) * 1.35);
+          height: calc(var(--imgCardheight) * 1.35);
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
