@@ -3,71 +3,189 @@
   --imgCardheight: 300px;
 }
 
-* {
-}
-
 body {
   margin: 0px;
   font-family: "Work sans", sans serif;
+
   h1,
   h2 {
     font-family: "Amatic sc";
     text-align: center;
   }
+
   header {
     padding: 24.7vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url("./images/lyon.webp") center/cover no-repeat;
     text-align: center;
     color: #ffffff;
+
     a {
       color: #ffffff;
     }
   }
-  main {
-    margin: 45px;
-    #introduction {
-      display: flex;
-      align-items: center;
 
-      img {
-        width: 406px;
-        height: auto;
+  main {
+    margin: 0;
+
+    #introduction {
+      width: calc(98vw - 45px);
+      margin: 45px;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      #annoyingImage {
+        img {
+          width: 406px;
+          margin-right: 45px;
+        }
       }
 
+      #introductionText {
+        flex: 1;
+        min-width: 300px;
+      }
       h2 {
         text-align: left;
       }
     }
+
     #famousDishes {
+      width: 98vw;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
       .famousDishesCard {
-        width: 406px;
-        height: 491px;
+        max-width: 406px;
+        height: auto;
         border: 1px solid #cecece;
         text-align: center;
         background-color: #f9f9f8;
+        margin: 1rem;
+        padding: 10px;
+
         img {
           width: var(--imgCardWidth);
           height: var(--imgCardheight);
           object-fit: cover;
         }
+
+        p {
+          line-height: 1.8;
+          text-align: center;
+          margin: 0;
+        }
       }
     }
+
     #restaurants {
-      width: 80vw;
+      width: 98vw;
+      padding-bottom: 45px;
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      overflow: hidden; /* Pour éviter les débordements */
+
       .restaurantCard {
         text-align: center;
-        max-width: calc((var(--imgCardWidth) * 1.35) + 30px);
+        line-height: 1.8;
+        max-width: calc((var(--imgCardWidth) * 2));
+
         img {
           width: calc(var(--imgCardWidth) * 1.35);
           height: calc(var(--imgCardheight) * 1.35);
           object-fit: cover;
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: #333333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+
+    ul {
+      list-style: none;
+      line-height: 2.5;
+      padding: 0px;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    #follow_us {
+      ul {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+
+    h2 {
+      font-family: "Work sans", sans serif;
+      text-align: start;
+    }
+
+    > p {
+      height: 5rem;
+      background-color: #222222;
+      flex-basis: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: auto;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    main {
+      #introduction {
+        flex-direction: column;
+        align-items: center;
+
+        #annoyingImage {
+          text-align: center;
+          margin-bottom: 20px;
+          img {
+            margin-right: 0;
+            width: 300px;
+          }
+        }
+
+        #introductionText {
+          text-align: center;
+          margin-top: 10px;
+
+          h2 {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      #famousDishes {
+        flex-direction: column;
+        align-items: center;
+
+        .famousDishesCard {
+          margin: 20px 0;
+        }
+      }
+
+      #restaurants {
+        flex-direction: column;
+        align-items: center;
+
+        .restaurantCard {
+          margin: 20px 0;
         }
       }
     }
